@@ -1,4 +1,4 @@
-# VBlog
+# Blog
 ![](https://img.shields.io/github/languages/top/github-laziji/VBlog.svg?style=flat)
 ![](https://img.shields.io/github/stars/gitHub-laziji/VBlog.svg?style=social)
 
@@ -6,8 +6,6 @@
 - [简介](#简介)
 - [演示地址](#演示地址)
 - [项目源码](#项目源码)
-- [项目特点](#项目特点)
-- [更新记录](#更新记录)
 - [快速使用](#快速使用)
 
 ## 简介
@@ -35,9 +33,6 @@
 
 
 ------
-
-
-作者 *Laziji*
 
 
 
