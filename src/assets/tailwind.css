@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .mask-1\/2 {
+        mask: linear-gradient(to top, transparent, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+    }
+}

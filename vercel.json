@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/archives/15",
+      "destination": "https://blog.amarea.cn/archives/netease-cloudmusic-history-version.html",
+      "permanent": true
+    }
+  ]
+}

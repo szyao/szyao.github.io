@@ -1,0 +1,70 @@
+body {
+  background-color: gray;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#app {
+  overflow: hidden;
+}
+
+/* Background */
+
+.bg {
+  background-image: var(--o-bg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Loading */
+
+.loaded {
+  background: #00000000 !important;
+  backdrop-filter: blur(0px) !important;
+}
+
+.loaded svg {
+  display: none;
+}
+
+/* Transition */
+
+.scale-x-enter-active,
+.scale-x-leave-active {
+  transition: all 0.3s ease;
+}
+
+.scale-x-enter-from,
+.scale-x-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  height: 0 !important;
+  opacity: 0;
+  /* transform: translateY(30px); */
+}
+
+.main-show-enter-active {
+  transition: all 1.5s ease;
+}
+
+.main-show-enter-from {
+  transform: scale(1.1);
+}
+
+.bg-show-enter-active {
+  transition: all 1.5s ease;
+}
+
+.bg-show-enter-from {
+  transform: scale(1.3);
+}
