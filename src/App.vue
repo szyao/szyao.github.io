@@ -35,9 +35,9 @@ onMounted(() => {
   <div class="z-10 flex min-h-screen w-full flex-col items-center justify-center text-white">
     <div v-show="backgroundLoaded" class="min-h-screen w-full overflow-hidden bg-black/40 transition-all duration-300 md:flex">
       <UserProfile
-        avatar="/favicon.png"
-        username="OriLight"
-        github="https://github.com/orilights"
+        avatar="/favicon.ico"
+        username="牧之"
+        github="https://github.com/szyao"
         telegram="https://t.me/OriLight"
         email="mailto:i@hk4e.com"
       />
@@ -46,27 +46,19 @@ onMounted(() => {
           <div>
             <Title title="站点" subtitle="Site" />
             <div class="flex flex-wrap gap-3">
-              <WithStatus text="博客">
+              <WithStatus text="知识库">
                 <LinkBlock
                   title="自留地"
-                  link="https://blog.amarea.cn/"
+                  link="https://www.yuque.com/szyao/note"
                 />
               </WithStatus>
               <LinkBlock
                 title="个人项目"
-                link="https://hk4e.com/"
+                link="https://github.com/szyao"
               />
               <LinkBlock
-                title="API"
-                link="https://api.amarea.cn/"
-              />
-              <LinkBlock
-                title="网站监控"
-                link="https://go.amarea.cn/status"
-              />
-              <LinkBlock
-                title="探针"
-                link="https://go.amarea.cn/serverstatus"
+                title="阿里云盘"
+                link="https://www.aliyundrive.com/"
               />
             </div>
           </div>
