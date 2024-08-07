@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', async function() {
   const contentArea = document.getElementById('contentArea');
   const date = '2024-05-03';
+  const currentDate = new Date();
   const dateString = `${currentDate.getFullYear()}-${(currentDate.getMonth()+1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
   const apiUrl = ` https://open.iciba.com/dsapi/?date=${encodeURIComponent(dateString)}`; 
   try {
