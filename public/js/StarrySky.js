@@ -103,7 +103,7 @@ const StarrySky = function () {
       focalDistance = canvasWidth * focalDistanceLevel
     },
     //设置星星数量等级
-    setStarCountLevel: function (star_count_level = 0.2) {
+    setStarCountLevel: function (star_count_level = 0.3) {
       starCountLevel = star_count_level;
       const starCount2 = Math.ceil(canvasWidth * starCountLevel);
       if (starCount > starCount2) {
