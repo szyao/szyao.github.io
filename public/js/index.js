@@ -12,10 +12,10 @@ avatar.addEventListener('mouseout', function () {
   StarrySky.setStarSpeedLevel(0.0003);
 });
 
-
+// 网站运行时间
 document.addEventListener('DOMContentLoaded', function() {
   const uptimeDiv = document.getElementById('uptime');
-  const launchDate = new Date('2023-01-01T00:00:00Z'); // 假设这是网站上线的日期
+  const launchDate = new Date('2020-01-01T00:00:00Z'); // 假设这是网站上线的日期
   const now = new Date();
 
   const years = now.getFullYear() - launchDate.getFullYear();
@@ -32,12 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
       days += 31; // 假设每个月最多31天，实际需要根据具体月份调整
   }
 
-  uptimeDiv.textContent = `网站已萌萌哒经运行了 ${years} 年 ${months} 月 ${days} 天`;
+  uptimeDiv.textContent = `网站已经萌萌哒运行了 ${years} 年 ${months} 月 ${days} 天`;
 });
 
+
+// 金山词霸，每日一词
 document.addEventListener('DOMContentLoaded', async function() {
   const contentArea = document.getElementById('contentArea');
-  const apiUrl = ` http://open.iciba.com/dsapi/`; 
+  const apiUrl = ` https://open.iciba.com/dsapi/`; 
   try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
