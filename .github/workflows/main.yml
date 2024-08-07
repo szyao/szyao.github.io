@@ -10,11 +10,21 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+     
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: | #注意我这里是使用的yarn管理包，如果你使用的npm，请换成npm的命令：npm install和npm run build
-          pnpm i 
-          yarn build
+      - name: Build
+        run: pnpm i && yarn build
+
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
