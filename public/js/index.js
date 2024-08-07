@@ -39,9 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // 金山词霸，每日一词
 document.addEventListener('DOMContentLoaded', async function() {
   const contentArea = document.getElementById('contentArea');
-  const apiUrl = ` https://open.iciba.com/dsapi/`; 
+  const date = '2024-05-03';
+  const apiUrl = ` https://open.iciba.com/dsapi/?date=${encodeURIComponent(date)}`; 
   try {
-      const response = await fetch(apiUrl);
+      const response = await fetch(apiUrl, { mode: 'cors' });
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
