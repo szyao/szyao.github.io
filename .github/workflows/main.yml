@@ -23,7 +23,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Build
-        run: pnpm i && yarn build
+        run: pnpm install && pnpm build
 
           
       - name: Deploy 🚀

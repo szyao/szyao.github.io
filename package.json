@@ -1,31 +1,59 @@
 {
-  "name": "homepage",
-  "type": "module",
-  "version": "0.0.0",
+  "name": "remio-home",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite --host",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint src"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint-staged": "lint-staged --allow-empty",
+    "prepare": "husky install"
   },
+  "author": "kasuie <i@kasuie.cc>",
+  "license": "MIT",
   "dependencies": {
-    "vue": "^3.4.33"
+    "@kasuie/http": "^0.0.11",
+    "@kasuie/icon": "^0.0.9",
+    "@kasuie/utils": "^0.0.13",
+    "@next/third-parties": "^14.2.3",
+    "@nextui-org/accordion": "^2.0.34",
+    "@nextui-org/checkbox": "^2.1.1",
+    "@nextui-org/input": "^2.2.1",
+    "@nextui-org/radio": "^2.1.1",
+    "@nextui-org/select": "^2.2.1",
+    "@nextui-org/system": "^2.2.1",
+    "@nextui-org/theme": "^2.2.5",
+    "crypto-js": "^4.2.0",
+    "framer-motion": "^11.2.9",
+    "next": "14.2.3",
+    "next-pwa": "^5.6.0",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.23.2",
-    "@types/node": "^20.14.11",
-    "@vicons/fa": "^0.12.0",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^9.7.0",
-    "eslint-plugin-tailwindcss": "^3.17.4",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.4",
-    "unplugin-auto-import": "^0.18.1",
-    "unplugin-vue-components": "^0.27.3",
-    "vite": "^5.3.4",
-    "vue-tsc": "^2.0.28"
+    "@commitlint/cli": "^19.1.0",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@kasuie/prettier": "^0.1.9",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
