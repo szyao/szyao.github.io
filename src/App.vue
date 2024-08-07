@@ -65,26 +65,24 @@ onMounted(() => {
           <div>
             <Title title="在玩的游戏" subtitle="Playing" />
             <div class="flex flex-wrap gap-3">
-              <WithStatus text="等纳塔">
                 <TextBlock>
                   <img src="/icon/game/genshin.png" class="inline-block w-5 rounded">
                   原神
                 </TextBlock>
-              </WithStatus>
               <WithStatus text="已退坑">
-                <TextBlock class="flex items-center gap-2">
+                <TextBlock class="flex items-center gap-2":disabled="true">
                   <img src="/icon/game/starrail.png" class="inline-block w-5 rounded">
                   星穹铁道
                 </TextBlock>
               </WithStatus>
               <WithStatus text="已退坑">
-                <TextBlock class="flex items-center gap-2">
+                <TextBlock class="flex items-center gap-2":disabled="true">
                   <img src="/icon/game/zzz.png" class="inline-block w-5 rounded">
                   绝区零
                 </TextBlock>
               </WithStatus>
               <WithStatus text="已退坑">
-                <TextBlock class="flex items-center gap-2">
+                <TextBlock class="flex items-center gap-2":disabled="true">
                   <img src="/icon/game/arknights.png" class="inline-block w-5 rounded">
                   明日方舟
                 </TextBlock>
