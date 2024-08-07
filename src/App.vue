@@ -71,19 +71,19 @@ onMounted(() => {
                   原神
                 </TextBlock>
               </WithStatus>
-              <WithStatus text="摆烂">
+              <WithStatus text="已退坑">
                 <TextBlock class="flex items-center gap-2">
                   <img src="/icon/game/starrail.png" class="inline-block w-5 rounded">
                   星穹铁道
                 </TextBlock>
               </WithStatus>
-              <WithStatus text="随便玩玩">
+              <WithStatus text="已退坑">
                 <TextBlock class="flex items-center gap-2">
                   <img src="/icon/game/zzz.png" class="inline-block w-5 rounded">
                   绝区零
                 </TextBlock>
               </WithStatus>
-              <WithStatus text="全靠MAA">
+              <WithStatus text="已退坑">
                 <TextBlock class="flex items-center gap-2">
                   <img src="/icon/game/arknights.png" class="inline-block w-5 rounded">
                   明日方舟
