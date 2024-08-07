@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       days += 31; // 假设每个月最多31天，实际需要根据具体月份调整
   }
 
-  uptimeDiv.textContent = `网站已经运行了 ${years} 年 ${months} 月 ${days} 天`;
+  uptimeDiv.textContent = `网站已萌萌哒经运行了 ${years} 年 ${months} 月 ${days} 天`;
 });
 
 document.addEventListener('DOMContentLoaded', async function() {
