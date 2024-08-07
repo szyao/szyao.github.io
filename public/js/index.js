@@ -36,25 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// 金山词霸，每日一词
-document.addEventListener('DOMContentLoaded', async function() {
-  const contentArea = document.getElementById('contentArea');
-  const date = '2024-05-03';
-  const currentDate = new Date();
-  const dateString = `${currentDate.getFullYear()}-${(currentDate.getMonth()+1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
-  const apiUrl = ` https://open.iciba.com/dsapi/?date=${encodeURIComponent(dateString)}`; 
-  try {
-      const response = await fetch(apiUrl, { mode: 'no-cors' });
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      contentArea.innerHTML = `
-          ${data.content}
-          <br/>
-          ${data.note}
-      `;
-  } catch (error) {
-      console.error('Error fetching data:', error);
-  }
-});
