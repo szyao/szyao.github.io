@@ -26,50 +26,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
   uptimeDisplay.textContent = `网站已经萌萌哒运行了 ${years} 年 ${days % 365} 天`;
 });
-// 背景音乐
-document.addEventListener('DOMContentLoaded', function() {
-  const musicToggle = document.getElementById('musicToggle');
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  backgroundMusic.load(); // 加载音频文件
-  musicToggle.addEventListener('click', function() {
-      if (backgroundMusic.paused) {
-          // 如果音乐暂停，开始播放
-          backgroundMusic.play();
-          musicToggle.textContent = "暂停音乐";
-      } else {
-          // 如果音乐正在播放，暂停播放
-          backgroundMusic.pause();
-          musicToggle.textContent = "播放音乐";
-      }
-  });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-  const audioControlButton = document.getElementById('audioControl');
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  let playCount = 0; // 跟踪播放次数，用于控制加载/播放/停止的循环
-  
-  audioControlButton.addEventListener('click', function() {
-      if (playCount === 0) {
-          // 第一次点击：加载并播放音频
-          backgroundMusic.load();
-          backgroundMusic.play().then(() => {
-              audioControlButton.textContent = "暂停音乐";
-              playCount++;
-          }).catch(error => {
-              console.error("播放失败:", error);
-          });
-      } else if (playCount >0) {
-          // 第二次点击：停止播放音频
-          backgroundMusic.pause();
-          audioControlButton.textContent = "播放音乐";
-      } else {
-          // 第三次及之后的点击：重新开始播放音频
-          backgroundMusic.play().then(() => {
-              audioControlButton.textContent = "暂停音乐";
-          }).catch(error => {
-              console.error("播放失败:", error);
-          });
-      }
-  });
+
+
+
+// 背景音乐
+// 获取页面上的音频控制按钮和音频元素
+const audioControlButton = document.getElementById('audioControl');
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// 定义一个变量用来判断音频是否已经加载完成
+let hasLoaded = false;
+
+// 定义一个变量用来判断音频是否正在播放
+let isPlaying = false;
+
+// 添加点击事件监听器到音频控制按钮
+audioControlButton.addEventListener('click', function() {
+    if (!hasLoaded) {
+        // 如果音频尚未加载，则先加载音频文件
+        backgroundMusic.load();
+        hasLoaded = true; // 设置已加载标志为true
+        backgroundMusic.play().then(() => {
+          isPlaying = true;
+          audioControlButton.textContent = "暂停音乐";
+      }).catch(error => {
+          console.error("播放失败:", error);
+      });
+    } else {
+        // 如果音频已经加载，则根据当前播放状态切换播放/暂停
+        if (!isPlaying) {
+            backgroundMusic.play().then(() => {
+                isPlaying = true;
+                audioControlButton.textContent = "暂停音乐";
+            }).catch(error => {
+                console.error("播放失败:", error);
+            });
+        } else {
+            backgroundMusic.pause();
+            isPlaying = false;
+            audioControlButton.textContent ="播放音乐";
+        }
+    }
 });
