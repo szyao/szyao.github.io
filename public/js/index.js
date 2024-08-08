@@ -27,4 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
   uptimeDisplay.textContent = `网站已经萌萌哒运行了 ${years} 年 ${days % 365} 天`;
 });
 
+// 底部音乐
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('toggleIframe');
+  const iframeContainer = document.getElementById('iframeContainer');
+  let iframeElement;
 
+  toggleButton.addEventListener('click', function() {
+      if (!iframeElement) {
+          // 创建并插入iframe
+          iframeElement = document.createElement('iframe');
+          iframeElement.src = ' https://music.163.com/outchain/player?type=2&id=539420&auto=0'; 
+          iframeElement.frameBorder = 0;
+          iframeElement.style.width = '100%';
+          iframeElement.style.height = '400px';
+          iframeContainer.appendChild(iframeElement);
+      } else {
+          // 移除iframe
+          iframeContainer.removeChild(iframeElement);
+          iframeElement = null;
+      }
+  });
+});
