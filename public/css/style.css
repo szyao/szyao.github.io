@@ -252,7 +252,9 @@ footer .item .tooltip {
   transform: translateY(-40px);
   transition: all 0.1s ease-in-out;
 }
-
+footer .button {
+  border-color: DarkGray;
+}
 
 
 
