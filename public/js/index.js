@@ -13,26 +13,18 @@ avatar.addEventListener('mouseout', function () {
 });
 
 // 网站运行时间
+
 document.addEventListener('DOMContentLoaded', function() {
-  const uptimeDiv = document.getElementById('uptime');
-  const launchDate = new Date('2020-01-01T00:00:00Z'); // 假设这是网站上线的日期
+  const uptimeDisplay = document.getElementById('uptime');
+  const launchDate = new Date('2020-01-01T00:00:00Z'); // 假设网站在2024年1月1日上线
+  
   const now = new Date();
+  const diff = now.getTime() - launchDate.getTime();
 
-  const years = now.getFullYear() - launchDate.getFullYear();
-  const months = now.getMonth() - launchDate.getMonth();
-  let days = now.getDate() - launchDate.getDate();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const years = Math.floor(days / 365);
 
-  // 如果月份小于0，表示跨年，需要调整月份和天数
-  if (months < 0 || (months === 0 && days < 0)) {
-      years--;
-      months += 12;
-  }
-  // 如果月份相等但天数小于0，表示跨月，需要调整天数
-  if (months === 0 && days < 0) {
-      days += 31; // 假设每个月最多31天，实际需要根据具体月份调整
-  }
-
-  uptimeDiv.textContent = `网站已经萌萌哒运行了 ${years} 年 ${months} 月 ${days} 天`;
+  uptimeDisplay.textContent = `网站已经萌萌哒运行了 ${years} 年 ${days % 365} 天`;
 });
 
 
