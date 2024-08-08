@@ -45,6 +45,7 @@ let isPlaying = false;
 audioControlButton.addEventListener('click', function() {
     if (!hasLoaded) {
         // 如果音频尚未加载，则先加载音频文件
+        audioControlButton.textContent = "加载中...";
         backgroundMusic.load();
         hasLoaded = true; // 设置已加载标志为true
         backgroundMusic.play().then(() => {
