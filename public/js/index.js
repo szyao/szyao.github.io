@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
           iframeElement.src = ' https://music.163.com/outchain/player?type=2&id=539420&auto=0'; 
           iframeElement.frameBorder = 0;
           iframeElement.style.width = '100%';
-          iframeElement.style.height = '400px';
+          iframeElement.style.height = '150px';
           iframeContainer.appendChild(iframeElement);
       } else {
           // 移除iframe
