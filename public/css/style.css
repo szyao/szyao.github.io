@@ -149,8 +149,8 @@ nav .item a img {
 
 nav .item .tooltip {
   position: absolute;
-  width: 80px;
-  max-height: 80px;
+  min-width: 80px;
+  min-height: 20px;
   background-color: rgb(255, 255, 255);
   bottom: 40px;
   padding: 4px;
