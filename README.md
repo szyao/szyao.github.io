@@ -1,11 +1,12 @@
 # PersonalPage
 一款响应式的动态星空背景个人主页
-
+[原项目](https://github.com/DoWake/PersonalPage)
 
 ## 演示图片
-![alt 演示图](https://mengxing.cc/1.png)
+![alt 演示图](.other/web.png)
 
 
 ## 演示地址
-[个人主页](https://mengxing.cc)
+[原作者个人主页](https://mengxing.cc)
+[个人主页](https://mzlog.com)
 
