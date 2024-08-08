@@ -26,4 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   uptimeDisplay.textContent = `网站已经萌萌哒运行了 ${years} 年 ${days % 365} 天`;
 });
-
+// 背景音乐
+document.addEventListener('DOMContentLoaded', function() {
+  const musicToggle = document.getElementById('musicToggle');
+  const backgroundMusic = document.getElementById('backgroundMusic');
+  
+  musicToggle.addEventListener('click', function() {
+      if (backgroundMusic.paused) {
+          // 如果音乐暂停，开始播放
+          backgroundMusic.play();
+          musicToggle.textContent = "暂停音乐";
+      } else {
+          // 如果音乐正在播放，暂停播放
+          backgroundMusic.pause();
+          musicToggle.textContent = "播放音乐";
+      }
+  });
+});
