@@ -54,17 +54,15 @@ audioControlButton.addEventListener('click', function() {
             audioControlButton.textContent ="播放音乐";
         }
     }
-    audioControlButton.textContent ="状态已更新";
-    updateWaveRing();  //更新动画状态
 });
 
 
-const animbox = document.getElementById('animbox');
+// const animbox = document.getElementById('animbox');
 
-animbox.addEventListener('click', function() {
-    if (animbox.style.visibility === 'visible') {
-        animbox.style.visibility = 'hidden';
-    } else {
-        animbox.style.visibility = 'visible';
-    }
-});
+// animbox.addEventListener('click', function() {
+//     if (animbox.style.visibility === 'visible') {
+//         animbox.style.visibility = 'hidden';
+//     } else {
+//         animbox.style.visibility = 'visible';
+//     }
+// });
