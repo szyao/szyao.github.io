@@ -8,7 +8,7 @@
  */
 
 export default {
-    themeSelect: "white",
+    themeSelect: "dark",
     // 主题
     themes: {
         white: [
