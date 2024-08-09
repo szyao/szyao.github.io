@@ -16,6 +16,13 @@ avatar.addEventListener('mouseout', function () {
 // 背景音乐
 // 获取页面上的音频控制按钮和音频元素
 const audioControlButton = document.getElementById('audioControl');
+
+// 定义一个变量用来判断音频是否已经加载完成
+let hasLoaded = false;
+
+// 定义一个变量用来判断音频是否正在播放
+let isPlaying = false;
+
 // 获取页面上的音频动画
 const anim1 = document.getElementById('anim1');
 const anim2 = document.getElementById('anim2');
@@ -37,12 +44,7 @@ function updateWaveRing() {
         anim5.style.animationPlayState = 'running';
     }
 }
-
-// 定义一个变量用来判断音频是否已经加载完成
-let hasLoaded = false;
-
-// 定义一个变量用来判断音频是否正在播放
-let isPlaying = false;
+updateWaveRing() 
 
 // 添加点击事件监听器到音频控制按钮
 audioControlButton.addEventListener('click', function() {
