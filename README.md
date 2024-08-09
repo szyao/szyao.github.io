@@ -3,7 +3,7 @@
 [原项目](https://github.com/DoWake/PersonalPage)
 
 ## 演示图片
-![alt 演示图](.other/web.png)
+![alt 演示图](other/web.png)
 
 
 ## 演示地址
