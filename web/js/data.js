@@ -59,35 +59,35 @@ export default {
         subTitle: "爱好编程，运动，旅行，摄影与冰激凌",
         menu: [
             {
-                name: "Blog",
-                icon: "fa-wordpress",
-                link: "https://blog.n0ts.top/"
-            },
-            {
                 name: "Email",
                 icon: "fa-envelope",
-                link: "mailto:mail@n0ts.top"
+                link: "mailto:yao@mzlog.com"
+            },
+                        {
+                name: "微信",
+                icon: "fa-weixin",
+                link: "https://wpa.qq.com/msgrd?v=3&uin=1656071287&site=qq&menu=yes"
             },
             {
                 name: "Gitee",
                 icon: "fa-github",
-                link: "https://gitee.com/n0ts"
+                link: "https://github.com/szyao"
             },
             {
-                name: "QQ",
-                icon: "fa-qq",
-                link: "https://wpa.qq.com/msgrd?v=3&uin=1656071287&site=qq&menu=yes"
+                name: "阿里云盘",
+                icon: "fa-cloud",
+                link: "https://www.alipan.com/drive/home"
             },
             {
-                name: "坚果小栈 - 技术交流",
-                icon: "fa-code",
-                link: "https://jq.qq.com/?_wv=1027&k=qMNJqj3F"
+                name: "知识库",
+                icon: "fa-book",
+                link: "https://www.yuque.com/szyao/note"
             }
         ]
     },
     lovexhj2: {
         content: `<h1>你好!</h1>
-        <h2>我是 N0ts，</h2>
+        <h2>我是 牧之，</h2>
         <p>一名<b>💻全栈开发者</b>，19级大学生，现就职于🌏上海，最爱🍦；</p>
         <p>用#️⃣代码去与计算机进行沟通，是我最喜欢做的事；🔋</p>
         <p>我也开源的一些小作品，去提升自己的开发能力⭐；</p>
@@ -100,6 +100,7 @@ export default {
                 >📚Blog</a
             >。
         </p>`,
-        img: "../images/me.jpg"
+        cropright :'<a  target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">苏ICP备19043277号</a>'                     ,
+        img: "./images/hsl.webp"
     }
 };
