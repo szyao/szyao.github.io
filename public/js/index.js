@@ -17,7 +17,9 @@ avatar.addEventListener('mouseout', function () {
 // 获取页面上的音频控制按钮和音频元素
 const audioControlButton = document.getElementById('audioControl');
 const backgroundMusic = document.getElementById('backgroundMusic');
-const animationDiv = document.getElementById('animationDiv');
+
+const button = document.getElementById('toggleAnimations');
+const animationDiv = document.querySelectorAll('.animationDiv');
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
 
