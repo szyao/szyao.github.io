@@ -44,7 +44,7 @@ function updateWaveRing() {
         anim5.style.animationPlayState = 'running';
     }
 }
-updateWaveRing() 
+updateWaveRing(); 
 
 // 添加点击事件监听器到音频控制按钮
 audioControlButton.addEventListener('click', function() {
@@ -74,6 +74,6 @@ audioControlButton.addEventListener('click', function() {
             audioControlButton.textContent ="播放音乐";
         }
     }
-    updateWaveRing()  //更新动画状态
+    updateWaveRing();  //更新动画状态
 });
 
