@@ -19,7 +19,7 @@ const audioControlButton = document.getElementById('audioControl');
 const backgroundMusic = document.getElementById('backgroundMusic');
 // 获取页面上的音频动画
 const button = document.getElementById('toggleAnimations');
-const animationDiv = document.querySelectorAll('.animationDiv');
+const animationDiv = document.querySelectorAll('.div');
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
 
