@@ -18,8 +18,9 @@ avatar.addEventListener('mouseout', function () {
 const audioControlButton = document.getElementById('audioControl');
 const backgroundMusic = document.getElementById('backgroundMusic');
 // 获取页面上的音频动画
-const button = document.getElementById('toggleAnimations');
-const animationDiv = document.querySelectorAll('.div');
+const button = document.getElementById('animbox');
+const animationDiv = document.querySelectorAll('.animation-div');
+animationDiv.style.animationPlayState = 'paused';
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
 
@@ -31,7 +32,6 @@ audioControlButton.addEventListener('click', function() {
     if (!hasLoaded) {
         // 如果音频尚未加载，则先加载音频文件
         audioControlButton.textContent = "加载中...";
-        animationDiv.style.animationPlayState = 'paused';
         backgroundMusic.load();
         hasLoaded = true; // 设置已加载标志为true
         backgroundMusic.play().then(() => {
