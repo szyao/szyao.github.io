@@ -8,7 +8,7 @@
  */
 
 export default {
-    themeSelect: "dark",
+    themeSelect: "white",
     // 主题
     themes: {
         white: [
@@ -55,7 +55,7 @@ export default {
         ]
     },
     lovexhj1: {
-        title: "牧之 ｜ 主页",
+        title: "牧之｜主页",
         subTitle: "花有重开日，人无再少年。",
         menu: [
             {
