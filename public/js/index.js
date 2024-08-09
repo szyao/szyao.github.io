@@ -24,27 +24,7 @@ let hasLoaded = false;
 let isPlaying = false;
 
 // 获取页面上的音频动画
-const anim1 = document.getElementById('anim1');
-const anim2 = document.getElementById('anim2');
-const anim3 = document.getElementById('anim3');
-const anim4 = document.getElementById('anim4');
-const anim5 = document.getElementById('anim5');
-function updateWaveRing() {
-    if (!isPlaying) {
-        anim1.style.animationPlayState = 'paused';
-        anim2.style.animationPlayState = 'paused';
-        anim3.style.animationPlayState = 'paused';
-        anim4.style.animationPlayState = 'paused';
-        anim5.style.animationPlayState = 'paused';
-    } else {
-        anim1.style.animationPlayState = 'running';
-        anim2.style.animationPlayState = 'running';
-        anim3.style.animationPlayState = 'running';
-        anim4.style.animationPlayState = 'running';
-        anim5.style.animationPlayState = 'running';
-    }
-}
-updateWaveRing(); 
+
 
 // 添加点击事件监听器到音频控制按钮
 audioControlButton.addEventListener('click', function() {
@@ -78,3 +58,13 @@ audioControlButton.addEventListener('click', function() {
     updateWaveRing();  //更新动画状态
 });
 
+
+const animbox = document.getElementById('animbox');
+
+animbox.addEventListener('click', function() {
+    if (animbox.style.visibility === 'visible') {
+        animbox.style.visibility = 'hidden';
+    } else {
+        animbox.style.visibility = 'visible';
+    }
+});

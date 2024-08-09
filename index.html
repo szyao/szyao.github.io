@@ -11,6 +11,14 @@
   <body bgcolor="#000000">
     <canvas id="bg"></canvas>
     <main class="container">
+      <!-- 动画 -->
+      <div class="animbox" id = 'animbox'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <!-- 头像 -->
       <img
         class="avatar"
@@ -85,15 +93,6 @@
         <button id="audioControl">点击加载音乐</button>
         <audio id="backgroundMusic" src="public/img/music.mp3" preload="none" loop=true style="display:none;">
         </audio>
-
-        <!-- 动画 -->
-        <div class="animbox" id = 'animbox_control'>
-          <div id= "anim1"></div>
-          <div id= 'anim2'></div>
-          <div id= 'anim3'></div>
-          <div id= 'anim4'></div>
-          <div id= 'anim5'></div>
-        </div>
         <p class="copyright">
           <!-- 备案号和版权 -->
           <a  target="_blank" class="icp"
