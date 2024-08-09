@@ -3,7 +3,7 @@
     src: url("../fonts/1.ttf");
 }
 
-:root {
+:root [theme="white"] {
     --bgColor: rgb(255, 165, 92);
     --firstBgColor: linear-gradient(to top, rgb(255, 165, 92), rgb(255, 159, 49));
     --hillColor1: rgb(115, 49, 54);
