@@ -20,7 +20,7 @@ const backgroundMusic = document.getElementById('backgroundMusic');
 // 获取页面上的音频动画
 const button = document.getElementById('animbox');
 const animationDiv = document.querySelectorAll('.animation-div');
-animationDiv.style.animationPlayState = 'paused';
+
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
 
