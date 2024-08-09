@@ -1,9 +1,5 @@
-/////music
-
 const audio = document.getElementById('music');
-const avatar = document.getElementById('avatar');
-const halo = document.querySelector('.halo');
-
+const waveRingContainer = document.getElementById('waveRingContainer');
 let audioCtx;
 let analyser;
 let source;
@@ -23,24 +19,30 @@ function initAudio() {
     analyser.connect(audioCtx.destination);
 }
 
-// 更新光环效果
-function updateHalo() {
-    requestAnimationFrame(updateHalo);
+// 更新波浪圆环效果
+function updateWaveRing() {
+    requestAnimationFrame(updateWaveRing);
     analyser.getByteFrequencyData(dataArray);
     let maxVolume = 0;
     for (let i = 0; i < dataArray.length; i++) {
         maxVolume = Math.max(maxVolume, dataArray[i]);
     }
-    // 根据音量调整光环尺寸
-    halo.style.transform = `scale(1.${maxVolume / 100})`;
+    waveRingContainer.style.animationTimingFunction = `cubic-bezier(${maxVolume / 256}, 0, 1, ${1 - maxVolume / 256})`;
+    waveRingContainer.style.opacity = `${Math.min(1, maxVolume / 128)}`;
+    waveRingContainer.style.transform = `scale(1.${maxVolume / 100})`;
 }
 
-// 开始分析音频
-function startAnalysis() {
-    audio.play();
-    initAudio();
-    updateHalo();
+// 控制圆环显示与隐藏
+function toggleWaveRing() {
+    if (audio.paused) {
+        waveRingContainer.style.visibility = 'hidden';
+    } else {
+        waveRingContainer.style.visibility = 'visible';
+        initAudio();
+        updateWaveRing();
+    }
 }
 
-// 在音频播放时启动分析
-audio.addEventListener('play', startAnalysis);
+// 监听音频播放状态
+audio.addEventListener('play', toggleWaveRing);
+audio.addEventListener('pause', toggleWaveRing);

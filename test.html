@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>音乐驱动的光环效果</title>
+    <title>音乐驱动的波浪圆环效果</title>
     <style>
         #avatar {
             width: 200px;
@@ -11,7 +11,7 @@
             object-fit: cover;
             position: relative;
         }
-        .halo {
+        .wave-ring {
             position: absolute;
             top: 0;
             left: 0;
@@ -19,21 +19,28 @@
             height: 100%;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
-            animation: haloPulse 1s infinite;
+            animation: wavePulse 1s infinite;
+            visibility: hidden;
         }
-        @keyframes haloPulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes wavePulse {
+            0% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.1; }
         }
     </style>
 </head>
 <body>
     <img id="avatar" src="public/img/mz-nobg.jpg" alt="Avatar">
-    <div class="halo"></div>
+    <div id="waveRingContainer" class="wave-ring"></div>
     
     <audio id="music" controls src="public/img/music.mp3"></audio>
     
     <script src="public/js/music.js"></script>
 </body>
 </html>
+
+
+
+
+
+
