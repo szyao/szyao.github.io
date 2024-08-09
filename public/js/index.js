@@ -16,10 +16,27 @@ avatar.addEventListener('mouseout', function () {
 // 背景音乐
 // 获取页面上的音频控制按钮和音频元素
 const audioControlButton = document.getElementById('audioControl');
-const backgroundMusic = document.getElementById('backgroundMusic');
 // 获取页面上的音频动画
-const button = document.getElementById('animbox');
-const animationDiv = document.querySelectorAll('.animation-div');
+const anim1 = document.getElementById('anim1');
+const anim2 = document.getElementById('anim2');
+const anim3 = document.getElementById('anim3');
+const anim4 = document.getElementById('anim4');
+const anim5 = document.getElementById('anim5');
+function updateWaveRing() {
+    if (!isPlaying) {
+        anim1.style.animationPlayState = 'paused';
+        anim2.style.animationPlayState = 'paused';
+        anim3.style.animationPlayState = 'paused';
+        anim4.style.animationPlayState = 'paused';
+        anim5.style.animationPlayState = 'paused';
+    } else {
+        anim1.style.animationPlayState = 'running';
+        anim2.style.animationPlayState = 'running';
+        anim3.style.animationPlayState = 'running';
+        anim4.style.animationPlayState = 'running';
+        anim5.style.animationPlayState = 'running';
+    }
+}
 
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
@@ -37,7 +54,6 @@ audioControlButton.addEventListener('click', function() {
         backgroundMusic.play().then(() => {
           isPlaying = true;
           audioControlButton.textContent = "暂停音乐";
-          animationDiv.style.animationPlayState = 'running';
       }).catch(error => {
           console.error("播放失败:", error);
       });
@@ -47,7 +63,6 @@ audioControlButton.addEventListener('click', function() {
             backgroundMusic.play().then(() => {
                 isPlaying = true;
                 audioControlButton.textContent = "暂停音乐";
-                animationDiv.style.animationPlayState = 'running';
             }).catch(error => {
                 console.error("播放失败:", error);
             });
@@ -55,8 +70,8 @@ audioControlButton.addEventListener('click', function() {
             backgroundMusic.pause();
             isPlaying = false;
             audioControlButton.textContent ="播放音乐";
-            animationDiv.style.animationPlayState = 'paused';
         }
     }
+    updateWaveRing()  //更新动画状态
 });
 

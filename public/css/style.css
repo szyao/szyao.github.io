@@ -362,7 +362,7 @@ footer .button {
   text-align: center;
 }
 /*设置各竖条的共有样式*/
-.animbox > animation-div {
+.animbox > div {
   background-color: #279fcf;
   width: 4px;
   height: 35px;
