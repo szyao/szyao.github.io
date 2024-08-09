@@ -55,8 +55,8 @@ export default {
         ]
     },
     lovexhj1: {
-        title: "我是 N0ts",
-        subTitle: "爱好编程，运动，旅行，摄影与冰激凌",
+        title: "牧之 ｜ 主页",
+        subTitle: "花有重开日，人无再少年。",
         menu: [
             {
                 name: "Email",
@@ -86,19 +86,16 @@ export default {
         ]
     },
     lovexhj2: {
-        content: `<h1>你好!</h1>
+        content: `
         <h2>我是 牧之，</h2>
-        <p>一名<b>💻全栈开发者</b>，19级大学生，现就职于🌏上海，最爱🍦；</p>
+        <p>一名<b>💻代码开发者</b>，目前是在读学生，现在🌏北京实习，最爱**；</p>
         <p>用#️⃣代码去与计算机进行沟通，是我最喜欢做的事；🔋</p>
         <p>我也开源的一些小作品，去提升自己的开发能力⭐；</p>
         <p>当然，我也很乐意与志同道合的朋友🤙一起学习，可在上方来找我哦。</p>
         <p>即使前方的路看似绝境🌋，也要有硬生生为自己开辟出一条道路的勇气！💪</p>
         <p>
-            我的开源：<a href="https://gitee.com/n0ts" target="_blank">📁Gitee</a>；我的博客：<a
-                href="https://blog.n0ts.top/"
-                target="_blank"
-                >📚Blog</a
-            >。
+            我的开源：<a href="https://github.com" target="_blank">📁Github</a> ；
+            我的博客：<a href="https://mzlog.com/" target="_blank">📚Blog</a> 。
         </p>`,
         cropright :'<a  target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">苏ICP备19043277号</a>'                     ,
         img: "./images/hsl.webp"
