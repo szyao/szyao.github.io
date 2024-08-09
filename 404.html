@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>牧之 | 个人主页</title>
+    <title>牧之 | 404 Not Found</title>
     <link rel="shortcut icon" href="public/svg/mz-box-white.svg" type="image/x-icon">
     <link rel="stylesheet" href="public/css/style.css" />
+    <script>
+        // 页面加载完成后执行
+        window.onload = function() {
+            // 提示用户页面将跳转
+            document.body.innerHTML += "<p>页面未找到，将在3秒后自动跳转到首页...</p>";
+            
+            // 使用setTimeout在3秒后重定向到首页
+            setTimeout(function() {
+                window.location.href = "/index.html"; // 假设首页URL为/index.html
+            }, 3000); // 3000毫秒等于3秒
+        };
+    </script>
   </head>
   <body bgcolor="#000000">
     <canvas id="bg"></canvas>
@@ -17,9 +29,12 @@
         alt="Avatar"
       />
       <h3 class="nickname">牧之｜主页</h3>
-      <h3 class="nickname"></h3>
-      <a href="https://mzlog.com"><p class="introduce">暂无内容，返回主页</p></a>
+      <h3 class="nickname">  </h3>
+      <h4>404 Not Found</h4>
+      <p>页面未找到，将在3秒后自动跳转到首页...</p>
+      <a href="/index.html"><p class="introduce">立即返回主页</p></a>
 
+      
       <!-- foot -->
       <footer>
         <a
