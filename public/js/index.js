@@ -74,6 +74,7 @@ audioControlButton.addEventListener('click', function() {
             audioControlButton.textContent ="播放音乐";
         }
     }
+    audioControlButton.textContent ="状态已更新";
     updateWaveRing();  //更新动画状态
 });
 
