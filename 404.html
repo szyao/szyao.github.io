@@ -11,12 +11,12 @@
         // 页面加载完成后执行
         window.onload = function() {
             // 提示用户页面将跳转
-            document.body.innerHTML += "<p>页面未找到，将在3秒后自动跳转到首页...</p>";
+            document.body.innerHTML += "<p>页面未找到，将在5秒后自动跳转到首页...</p>";
             
             // 使用setTimeout在3秒后重定向到首页
             setTimeout(function() {
                 window.location.href = "/index.html"; // 假设首页URL为/index.html
-            }, 3000); // 3000毫秒等于3秒
+            }, 5000); // 5000毫秒等于5秒
         };
     </script>
   </head>
@@ -31,7 +31,7 @@
       <h3 class="nickname">牧之｜主页</h3>
       <h3 class="nickname">  </h3>
       <h4>404 Not Found</h4>
-      <p>页面未找到，将在3秒后自动跳转到首页...</p>
+      <p>页面未找到，将在5秒后自动跳转到首页...</p>
       <a href="/index.html"><p class="introduce">立即返回主页</p></a>
 
       
