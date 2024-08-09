@@ -119,7 +119,7 @@ new Vue({
 
             // 没有配置则初始化
             if (theme == null) {
-                window.localStorage.setItem("theme", "dark");
+                window.localStorage.setItem("theme", "white");
                 return this.changeTheme();
             }
 
