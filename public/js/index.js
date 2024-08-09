@@ -17,7 +17,7 @@ avatar.addEventListener('mouseout', function () {
 // 获取页面上的音频控制按钮和音频元素
 const audioControlButton = document.getElementById('audioControl');
 const backgroundMusic = document.getElementById('backgroundMusic');
-
+const animationDiv = document.getElementById('animationDiv');
 // 定义一个变量用来判断音频是否已经加载完成
 let hasLoaded = false;
 
@@ -29,11 +29,13 @@ audioControlButton.addEventListener('click', function() {
     if (!hasLoaded) {
         // 如果音频尚未加载，则先加载音频文件
         audioControlButton.textContent = "加载中...";
+        animationDiv.style.animationPlayState = 'paused';
         backgroundMusic.load();
         hasLoaded = true; // 设置已加载标志为true
         backgroundMusic.play().then(() => {
           isPlaying = true;
           audioControlButton.textContent = "暂停音乐";
+          animationDiv.style.animationPlayState = 'running';
       }).catch(error => {
           console.error("播放失败:", error);
       });
@@ -43,6 +45,7 @@ audioControlButton.addEventListener('click', function() {
             backgroundMusic.play().then(() => {
                 isPlaying = true;
                 audioControlButton.textContent = "暂停音乐";
+                animationDiv.style.animationPlayState = 'running';
             }).catch(error => {
                 console.error("播放失败:", error);
             });
@@ -50,6 +53,8 @@ audioControlButton.addEventListener('click', function() {
             backgroundMusic.pause();
             isPlaying = false;
             audioControlButton.textContent ="播放音乐";
+            animationDiv.style.animationPlayState = 'paused';
         }
     }
 });
+
