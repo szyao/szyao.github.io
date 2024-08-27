@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>牧之 | 404 Not Found</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/style.css" />
+    <script>
+        // 页面加载完成后执行
+        window.onload = function() {
+            // 提示用户页面将跳转
+            document.body.innerHTML += "<p>页面未找到，将在5秒后自动跳转到首页...</p>";
+            
+            // 使用setTimeout在3秒后重定向到首页
+            setTimeout(function() {
+                window.location.href = "/index.html"; // 假设首页URL为/index.html
+            }, 5000); // 5000毫秒等于5秒
+        };
+    </script>
+  </head>
+  <body bgcolor="#000000">
+    <canvas id="bg"></canvas>
+    <main class="container">
+      <img
+        class="avatar"
+        src="favicon.ico"
+        alt="Avatar"
+      />
+      <h3 class="nickname">牧之｜主页</h3>
+      <h3 class="nickname">  </h3>
+      <h4>404 Not Found</h4>
+      <p>页面未找到，将在5秒后自动跳转到首页...</p>
+      <a href="/index.html"><p class="introduce">立即返回主页</p></a>
+
+      
+      <!-- foot -->
+      <footer>
+        <a
+          target="_blank"
+          class="icp"
+          href="https://beian.miit.gov.cn/#/Integrated/index"
+          >苏ICP备19043277号</a>
+        <p class="copyright">
+          Copyright© 2024         
+          <a
+          target="_blank"
+          class="icp"
+          href="https://mzlog.com"
+          >mzlog.com</a
+        >. All Rights Reserved.
+        </p>
+      </footer>
+    </main>
+    <script src="public/js/StarrySky.js"></script>
+    <script src="public/js/index.js"></script>
+  </body>
+</html>
+ 

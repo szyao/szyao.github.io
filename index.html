@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--
+**GPLv3.0 @ 
+https://github.com/holgerhuo/minimalist-search 
+https://github.com/5iux/sou https://github.com/yeetime/sou2 
+github：https://github.com/szyao/szyao.github.io
+-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>西禾 · xihee.com</title>
+    <!--链接外部资源-->
+    <link rel="stylesheet" href="static/css/sou.css">
+    <link id="daily-theme" rel="stylesheet" href="static/css/sou.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" data-original-media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+    <link id="dark-theme" rel="stylesheet" href="static/css/sou_night.css" media="(prefers-color-scheme: dark)" data-original-media="(prefers-color-scheme: dark)">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> <!--引用Google Fonts Josefin Sans-->
+    <link rel="manifest" href="static/manifest.json">
+    <!--load sw.js-->
+    <script async>
+        'use strict';
+        'serviceWorker' in navigator && navigator.serviceWorker.register('service-worker.js').then(function(a) {
+            a.onupdatefound = function() {
+                var b = a.installing;
+                b.onstatechange = function() {
+                    switch (b.state) {
+                        case 'installed':
+                            navigator.serviceWorker.controller ? console.log('New or updated content is available.') : console.log('Content is now available offline!');
+                            break;
+                        case 'redundant':
+                            console.error('The installing service worker became redundant.');
+                    }
+                }
+            }
+        }).catch(function(a) {
+            console.error('Error during service worker registration:', a)
+        });
+    </script>
+    <!--load sw.js end-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Cache-Control"  content="no-transform" />
+    <meta http-equiv="Cache-Control"  content="no-siteapp" />
+    <link rel="icon" href="favicon.ico" sizes="256x256" />
+    <link rel="apple-touch-icon-precomposed" href="./static/images/server/apple-touch-icon.png" />
+    <meta name="msapplication-TileImage" content="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="full-screen" content="yes"><!--UC强制全屏-->
+    <meta name="browsermode" content="application"><!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app"><!--QQ应用模式-->
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/jQuery.rTabs.js"></script>
+    <script src="static/js/js.cookie.js"></script>
+    <script src="static/js/sou.js"></script>
+    <script async src="static/js/theme_auto.js"></script>
+    <script async src="static/js/theme_manual.js"></script>
+    <!--图标库-->
+    <link rel="stylesheet" href="static/css/font_1230786_swt4kkie8ym/iconfont.css"><!--阿里图标-->
+    <link rel="stylesheet" href="static/css/font_1614281/iconfont.css"><!--页面内容图标-->
+    <script async src="static/css/font_1230786_swt4kkie8ym/iconfont.js"></script><!--阿里图标-->
+    <!--图标库end-->
+</head>
+<body>
+    <!-- 主题 -->
+    <div class="top-right theme-switch">
+        <a id="theme-switch">
+            <img id="theme-switch-icon" src="static/icon/icon-light.svg" width="20" height="20" title="" aria-expanded="true">
+        </a>
+    </div>
+    <!-- 侧栏 -->
+    <div id="menu"><i></i></div>
+    <div class="side closed">
+        <div class="tab-nav j-tab-nav">
+            <a href="javascript:void(0);" class="current">书签</a>
+            <a href="javascript:void(0);">设置</a>
+        </div>
+
+        <div class="tab-con">
+            <div class="j-tab-con">
+                <!--书签-->
+                <div class="tab-con-item" style="display:block;">
+                    <div class="list" > <ul id="bookmarks"></ul></div>
+                </div>
+                <!--书签 end-->
+                <!--设置-->
+                <div class="tab-con-item">
+
+                    <div class="set">
+                        <!--搜索引擎设置-->
+                        <div class="set_blocks">
+                            <div class="set_blocks_title">
+                                Search Engines
+                            </div>
+                            <div class="set_blocks_content">
+                                <div class="se_list">
+                                    <table class="se_list_table">
+                                        <tr>
+                                            <td><span class="iconfont iconhome"></span></td>
+                                            <td>百度</td>
+                                            <td>
+                                                <button class="set_se_default" value="baidu"><span class="iconfont iconstrore-add"></span></button>
+                                                &nbsp;
+                                                <button class="edit_se" value="baidu"><span class="iconfont iconbook-edit"></span></button>
+                                                &nbsp;
+                                                <button class="delete_se" value="baidu"><span class="iconfont icondelete"></span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Google</td>
+                                            <td>
+                                                <button class="set_se_default" value="google"><span class="iconfont iconstrore-add"></span></button>
+                                                &nbsp;
+                                                <button class="edit_se" value="google"><span class="iconfont iconbook-edit"></span></button>
+                                                &nbsp;
+                                                <button class="delete_se" value="google"><span class="iconfont icondelete"></span></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="se_add_preinstall">
+                                    <button class="set_se_list_add"><span class="icon iconfont icontianjia"></span>Add new</button>
+                                    <button class="set_se_list_preinstall"><span class="icon iconfont iconjinggao"></span>Reset</button>
+                                </div>
+                                <div class="add_content se_add_content" style="display:none;">
+                                    <div class="from_items">
+                                        <p><b>Sequence:</b></p>
+                                        <input type="hidden" name="key_inhere">
+                                        <input type="number" name="key" placeholder="A valid number">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>Name:</b></p>
+                                        <input type="text" name="title" placeholder="Name">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>URL</b></p>
+                                        <input type="url" name="url" placeholder="Begin with https://">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>Query</b></p>
+                                        <input type="text" name="name" placeholder="Queries after ?">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>Icon</b></p>
+                                        <input type="text" name="img" placeholder="Img URL">
+                                    </div>
+                                    <div class="from_items button">
+                                        <button class="se_add_save">Save</button>
+                                        <button class="se_add_cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--搜索引擎设置 end-->
+                        <!--快捷方式设置-->
+                        <div class="set_blocks">
+                            <div class="set_blocks_title">
+                                Shortcuts
+                            </div>
+                            <div class="set_blocks_content">
+                                <div class="quick_list">
+                                    <table class="quick_list_table">
+                                        <tr>
+                                            <td>1.&nbsp;</td>
+                                            <td>Github</td>
+                                            <td>
+                                                <button class="edit_quick" value="1"><span class="iconfont iconbook-edit"></span></button>
+                                                &nbsp;
+                                                <button class="delete_quick" value="1"><span class="iconfont icondelete"></span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.&nbsp;</td>
+                                            <td>Notre Monde</td>
+                                            <td>
+                                                <button class="edit_quick" value="2"><span class="iconfont iconbook-edit"></span></button>
+                                                &nbsp;
+                                                <button class="delete_quick" value="2"><span class="iconfont icondelete"></span></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="se_add_preinstall">
+                                    <button class="set_quick_list_add"><span class="icon iconfont icontianjia"></span>Add new</button>
+                                    <button class="set_quick_list_preinstall"><span class="icon iconfont iconjinggao"></span>Reset</button>
+                                </div>
+                                <div class="add_content quick_add_content" style="display:none;">
+                                    <div class="from_items">
+                                        <p><b>Sequence:</b></p>
+                                        <input type="hidden" name="key_inhere">
+                                        <input type="number" name="key" placeholder="A valid number">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>Name:</b></p>
+                                        <input type="text" name="title" placeholder="Name">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>URL:</b></p>
+                                        <input type="url" name="url" placeholder="Begin with https://">
+                                    </div>
+                                    <div class="from_items">
+                                        <p><b>Icon:</b></p>
+                                        <input type="text" name="img" placeholder="Img URL">
+                                    </div>
+                                    <div class="from_items button">
+                                        <button class="quick_add_save">Save</button>
+                                        <button class="quick_add_cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--快捷方式设置 end-->
+                        <!--数据导出和恢复 start-->
+                        <div class="my_data">
+                            <br>
+                            <h3>Backup</h3>
+                            <textarea id="data_txt"></textarea>
+                            <br>
+                            <button id="my_data_in">Import</button>
+                            <button id="my_data_out">Export</button>
+                        </div>
+                         <!--数据导出和恢复 end-->
+                    </div>
+                </div>
+                <!--设置 end-->
+            </div>
+        </div>
+    </div>
+    <!-- 侧栏 end -->
+    <!--右侧内容-->
+    <div class="mywth" style="width: 320px;">
+        <div id="he-plugin-simple"><a href="https://xihee.com" style="font-size: 12px; color: #8b8b8b;"><b> @西禾(xihee.com)</b></a></div> 
+    </div>
+    <!--右侧内容end-->
+    <!--主体内容开始-->
+    <div id="content">
+        <!--头像、弹窗搜索框和书签 start-->
+        <div class="con">
+            <!--头像和弹窗start-->
+            <details>
+                <summary>
+                    <div class="shlogo" id = "weixin"></div>
+                    <div class="details-modal-overlay"></div>
+                </summary>
+                <div class="details-modal">
+                  <div class="details-modal-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="grey" />
+                    </svg>
+                  </div>
+                  <div class="details-modal-title">
+                    <h1>@西禾(xihee.com)</h1>
+                  </div>
+                  <div class="details-modal-content">
+                    <p>
+                    我的邮箱: sz.yao@qq.com
+                    </br>
+
+                    </br>
+
+                    </br>
+                      <hr />
+                   以下是网页布局的测试内容:
+                    </br> 1. 主页面搜索框
+                    </br> 2. 主页面点击头像弹窗
+                    </br> 3. 主页面随机一言
+                    </br> 4. 主页主题明/暗选择
+                    </br> 5. 侧边栏书签和设置
+                    </br> 设置：快捷方式、搜索引擎、导入和导出
+                    </p>
+                  </div>
+                </div>
+            </details>
+            <!--头像和弹窗end-->
+            <!--搜索框和书签 start-->
+            <div class="sou">
+                 <form target="_blank" class="search" action="https://cn.bing.com/search">
+                    <img class="se" src="static/icon/bing.ico" title="Switch"></img>
+                    <input id="search_placeholder" class="wd" type="text" name="wd" placeholder="Search: xihee.com">
+                    <button class="s">
+                        <i style="font-size: 20px;" class="iconfont icon-sousuo"></i>
+                    </button>
+                </form>
+                <div class="search-engine" style="display: none;">
+                    <div class="search-engine-head">
+                        <strong class="search-engine-tit">Select Search Engine</strong>
+                    </div>
+                    <ul class="search-engine-list">
+                         <li class="se-li" url="https://cn.bing.com/search" name="q" img="static/icon/bing.ico"><img src="static/icon/bing.ico"></img>Bing CN</li>
+                         <li class="se-li" url="https://www.baidu.com/s" name="wd" img="static/icon/baidu.ico"><img src="static/icon/baidu.ico"></img>百度</li>
+                         <li class="se-li" url="https://www.google.com/search" name="q" img="static/icon/google_1.png"><img src="static/icon/google_1.png"></img>Google</li>
+                    </ul>
+                </div>
+                <div class="quick-div">
+                    <ul class="quick-ul">
+                        <li class="quick" data-s="scp" target="_blank" title="GitHub">
+                            <a target=_blank rel="nofollow" href="https://github.com">
+                                <i style="background-image: url(static/icon/github.ico);"></i>
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--一言-->
+                <div class="hitokoto">
+                    <p id="hitokoto">花有重开日，人无再少年</p>——「<span class="from" id="from">西禾</span>」
+                </div>
+            </div>
+            <!--搜索框和书签 end-->
+        </div>
+        <!--主体内容end-->
+    </div>
+    <!--搜索框和书签 end-->
+    <div class="foot">
+        <!--这里可以输入信息
+        <a href="https://beian.miit.gov.cn/" target="_blank" style="display: inline-block"><b style="color: #8b8b8b;">苏ICP备19043277号</b></a>-->
+    </div>
+    <!--聚焦--来自原项目，我也不知道这个代码是什么，不放心请注释掉，哈哈哈-->
+    <script async src="static/js/defocus.js"></script>
+    <!--书签加载-->
+    <script async src="static/js/loadlinks.js"></script>
+    <!--一言-->
+    <script async>
+        fetch('https://v1.hitokoto.cn')
+        .then(function (res){
+        return res.json();
+        })
+        .then(function (data) {
+        var hitokoto = document.getElementById('hitokoto');
+        hitokoto.innerText = data.hitokoto;
+        var from = document.getElementById('from');
+        from.innerText = data.from;
+        })
+        .catch(function (err) {
+        console.error(err);
+        })
+    </script>
+<!--
+感谢作者代码来自以下项目并做修改
+github：https://github.com/5iux/sou
+github：https://github.com/yeetime/sou2
+github：https://github.com/HolgerHuo/minimalist-search
+github：https://github.com/liuzhonghao/lzh_web_start
+本项目基于GPL-3.0协议
+github：https://github.com/szyao/szyao.github.io
+-->
+</body>
+</html>

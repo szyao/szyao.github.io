@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>牧之 | 个人主页</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body bgcolor="#000000">
+    <canvas id="bg"></canvas>
+    <main class="container">
+      <!-- 头像 -->
+      <img
+        class="avatar"
+        src="favicon.ico"
+        alt="Avatar"
+      />
+
+      <h3 class="nickname">牧之·主页</h3>
+      <p class="introduce">花有重开日，人无再少年。</p>
+
+      <!-- 个人链接-->
+      <nav>
+        <!-- email-->
+        <div class="item">
+          <a target="_blank" href="mailto:yao@mzlog.com">
+            <img src="public/svg/mail.svg" alt="icon"/>
+          </a>
+          <div class="tooltip">Email</div>
+        </div>
+        <!-- wechat-->
+        <div class="item">
+          <a href="#">
+            <img src="public/svg/wechat.svg" alt="icon"/>
+          </a>
+          <div class="tooltip"><img src="public/img/wechat.jpg" alt="wechat"/></div>
+        </div>
+        <!-- 个人简介-->
+        <div class="item">
+          <a target="_blank" href="about/index.html">
+            <img src="public/svg/person.svg" alt="icon"/>
+          </a>
+          <div class="tooltip">个人简介</div>
+        </div>
+         <!-- Github-->
+        <div class="item">
+          <a target="_blank" href="https://github.com/szyao">
+            <img src="public/svg/github.svg" alt="icon"/>
+          </a>
+          <div class="tooltip">Github</div>
+        </div>
+        <!-- 知识库-->
+        <div class="item">
+          <a target="_blank" href="https://www.yuque.com/szyao/note">
+            <img src="public/svg/book.svg" alt="icon"/>
+          </a>
+          <div class="tooltip">知识库</div>
+        </div>
+        <!-- Onedrive-->
+        <div class="item">
+          <a target="_blank" href="https://1drv.ms/f/s!AluIwD0VgCQ0golQRGSKTtEGDc3mXA">
+            <img src="public/svg/cloud.svg" alt="icon"/>
+          </a>
+          <div class="tooltip">云盘</div>
+        </div>
+      </nav>
+      <!-- 简介-->
+      <p class="quote" id="contentArea">
+        无论人生上到哪一层台阶，阶下有人在仰望你，阶上亦有人在俯视你。
+        你抬头自卑，低头自得，唯有平视，才能看见最真实的自己。 ——杨绛
+      </p>
+      <!-- 测试图标<
+      <div class="wrapper">-->
+        <!-- 阿里云盘<
+        <button class="mz-btn-light" >
+          <span> <a target="_blank" href="https://www.alipan.com/drive/home"> 网盘</a></span>
+        </button>-->
+         <!-- 知识库
+         <button class="mz-btn-light" >
+          <span> <a target="_blank" href="https://www.yuque.com/szyao/note"> 知识库</a></span>
+         </button>-->
+        <!-- Github
+        <button class="mz-btn-light" >
+          <span> <a target="_blank" href="https://github.com/szyao"> Github</a></span>
+        </button>
+      </div>-->
+
+      <!-- foot -->
+      <footer>
+        <!-- 背景音乐 -->
+        <div class="checkbox-wrapper-35">
+          <input value="private" name="switch" id="switch" type="checkbox" class="switch">
+          <label for="switch">
+            <span class="switch-x-text">Music</span>
+          </label>
+        </div>
+        <audio id="backgroundMusic" src="public/img/music.mp3" preload="none" loop=true style="display:none;">
+        </audio>
+        <p class="copyright">
+          <!-- 备案号和版权 -->
+          <a  target="_blank" class="icp"
+              href="https://beian.miit.gov.cn/#/Integrated/index">苏ICP备19043277号</a>
+          &nbsp; |  &nbsp; 
+          © 2024&nbsp;
+          <a class="icp" href="https://mzlog.com">牧之</a>.&nbsp;All rights reserved. 
+        </p>
+      </footer>
+    </main>
+    <script src="public/js/StarrySky.js"></script>
+    <script src="public/js/index.js"></script>
+  </body>
+</html>
