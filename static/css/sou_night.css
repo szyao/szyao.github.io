@@ -92,7 +92,7 @@ a {
     width: 120px;
     height: 120px;
     margin: 5px auto;
-    background: url(avatar_night.png) no-repeat center/cover;
+    background: url("avatar.svg") no-repeat center/cover;
 }
 
 .con .shlogo a {
