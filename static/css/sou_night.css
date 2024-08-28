@@ -92,7 +92,7 @@ a {
     width: 120px;
     height: 120px;
     margin: 5px auto;
-    background: url(avatar.png) no-repeat center/cover;
+    background: url(avatar.webp) no-repeat center/cover;
     border-radius: 50%;
 }
 
