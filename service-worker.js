@@ -12,9 +12,8 @@ var precacheConfig = [
   ["static/js/jQuery.rTabs.js"],
   ["static/js/defocus.js"],
   ["static/js/jquery-3.4.1.min.js"],
-  ["./static/images/avatar-300x300.webp"],
-  ["./static/images/avatar_night.png"],
-  ["./static/images/server/apple-touch-icon.png"]
+  ["static/js/loadlinks.js"],
+  ["static/css/avatar.webp"]
 ];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
