@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STDD: Spatio-Temporal Dual Diffusion for Video Generation</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+      </div>
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title">
+          STDD: Spatio-Temporal Dual Diffusion for Video Generation
+        </h1>
+        <div class="is-size-5 publication-authors">
+          <div class="author-block"><a href="https://www.linkedin.com/in/weimin-wang-will/">Weimin Wang</a>*, </div>
+          <div class="author-block">Jiawei Liu*, </div>
+          <div class="author-block"><a href="https://scholar.google.com/citations?user=xXMj6_EAAAAJ">Zhijie Lin</a>, </div>
+          <div class="author-block">Jiangqiao Yan, </div>
+          <div class="author-block"><a href="https://shanshuo.github.io/">Shuo Chen</a>, </div>
+          <div class="author-block"><a href="https://www.linkedin.com/in/chetwin-low-061975193/">Chetwin Low</a>, </div>
+          <div class="author-block"><a href="https://www.linkedin.com/in/hnt4499/">Tuyen Hoang</a>, </div>
+          <div class="author-block"><a href="https://wujie1010.github.io/">Jie Wu</a>, </div>
+          <div class="author-block"><a href="https://scholar.google.com.sg/citations?user=8gm-CYYAAAAJ">Jun Hao Liew</a>, </div>
+          <div class="author-block"><a href="https://hanshuyan.github.io/">Hanshu Yan</a>, </div>
+          <div class="author-block"><a href="https://scholar.google.com/citations?user=DdCAbWwAAAAJ">Daquan Zhou</a>, </div>
+          <div class="author-block"><a href="https://sites.google.com/site/jshfeng/home">Jiashi Feng</a></div>          
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">ByteDance Inc.</span>
+          <span class="author-block">&nbsp&nbsp<sup>*</sup>Equal Contribution</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.04468"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The growing demand for high-fidelity video generation from textual descriptions has catalyzed significant research in this field. In this work, we introduce MagicVideo-V2 that  integrates  the  text-to-image model,  video motion generator, reference image embedding module and frame interpolation module into an end-to-end video generation pipeline. Benefiting from these architecture designs, MagicVideo-V2 can generate  an aesthetically pleasing, high-resolution video with remarkable fidelity and smoothness. It demonstrates superior performance over leading Text-to-Video systems such as Runway, Pika 1.0, Morph, Moon Valley and Stable Video Diffusion model via user evaluation at large scale. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2, columns is-centered">Text-to-Video Examples</h2>
+    <!-- <hr>
+    <center>
+      <h2 class="title is-5"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Animals</h2>
+    </center>
+    <hr> -->
+
+    <table class="center">
+      <tr>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A beautiful woman, with a pink and platinum-colored ombre mohawk, facing the camera, wearing a composition of bubble wrap, cyberpunk jacket.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A fat rabbit wearing a purple robe walking through a fantasy landscape.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A girl is writing something on a book. Oil painting style.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A girl with a hairband performing a song with her guitar on a warm evening at a local market, children's story book.mp4"></video></td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25% style="text-align:center;">"A beautiful woman, with a pink and platinum-colored ombre mohawk, facing the camera, wearing a composition of bubble wrap, cyberpunk jacket."</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25% style="text-align:center;">"A fat rabbit wearing a purple robe walking through a fantasy landscape."</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25% style="text-align:center;">"A girl is writing something on a book. Oil painting style."</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25% style="text-align:center;">"A girl with a hairband performing a song with her guitar on a warm evening at a local market, children's story book."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A group of mongooses scuttle about, set against a desert backdrop, bathed in bright and warm earth tones.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A lone traveller walks in a misty forest.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A medieval witch making a poison.mp4"></video></td>
+        <td style="padding-left: 5px; padding-right: 5px;"></td>
+        <td><video muted autoplay="autoplay" loop="loop" playsinline src="assets/T2V/A monkey making latte art.mp4"></video></td>
+      </tr>
+    </table>
+    <center>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container content is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{magicvideov2,
+      title={STDD: Spatio-Temporal Dual Diffusion for Video Generation},
+      author={Shuaizhen Yao, Xiaoya Zhang, Xin Liu, Mengyi Liu, Zhen Cui},
+      year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/pdf/2401.04468.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div class="content">
+          <p>
+             The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/"> Nerfies</a> project webpage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+</html>
