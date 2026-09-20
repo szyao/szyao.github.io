@@ -1,0 +1,31 @@
+/* Gridea Pro renders Markdown into HTML before the theme receives post.content. */
+.post-content { min-width: 0; overflow-wrap: anywhere; }
+.post-content ol { padding: 0 1em 1em 1.5em; }
+.post-content li { line-height: 1.8; margin: .25em 0; }
+.post-content li > ul,
+.post-content li > ol { margin: .35em 0 0; padding-bottom: 0; }
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+.post-content th,
+.post-content td { border: 1px solid #c9bfb0; padding: .45em .65em; text-align: left; }
+.post-content th { background: rgba(95, 74, 50, .08); font-weight: 600; }
+.post-content pre {
+  max-height: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+.post-content pre code { display: block; padding: 0; background: none; white-space: inherit; overflow: visible; }
+.post-content :not(pre) > code { padding: .12em .3em; border-radius: 2px; background: rgba(95, 74, 50, .1); }
+.post-content blockquote { margin: 1em 0; }
+.post-content hr { border: 0; border-top: 1px solid #c9bfb0; margin: 1.5em 0; }
+.post-content img,
+.post-content video,
+.post-content iframe { max-width: 100%; }

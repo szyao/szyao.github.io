@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>留言板</title>
+  <link rel="icon" href="/media/img/favicon.ico">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/css-js/perfect-scrollbar.min.css">
+  <link rel="stylesheet" href="/styles/css-js/nprogress.min.css">
+  <link rel="stylesheet" href="/styles/comments.css">
+  <script src="/styles/css-js/jquery.min.js"></script>
+  <script src="/styles/css-js/jquery.pjax.min.js"></script>
+  <script src="/styles/css-js/perfect-scrollbar.min.js"></script>
+  <script src="/styles/css-js/nprogress.min.js"></script>
+  <script src="/styles/css-js/jquery.mousewheel.min.js"></script>
+  <script src="/styles/css-js/jquery.form.min.js"></script>
+  <style>body,html{padding:0;margin:0;outline:0;border:0}#loading{transition:all 1s;outline:0;background:#90877a url('/media/img/loading.apng') center no-repeat;width:100%;height:100%;position:fixed;z-index:999;padding:0;margin:0}</style>
+</head>
+<body data-book-page="content" data-auto-open="false" data-archive-url="/archives/">
+  <div id="loading"></div>
+  <div id="body-bg">
+    <div id="tea_box"></div>
+    <div id="img_top_box_bg" onclick="imgClosed()"></div>
+    <div id="closed"></div>
+    <div id="body"><div class="mains">
+      <div id="book-left"></div>
+      <div id="book-right">
+        <div id="book-nav-placeholder"></div>
+        <div id="axjx_box"><div id="postbox"><article class="post">
+          <h1 class="post-title">留言板</h1>
+          <div class="post-content"><section class="book-comments" aria-label="评论"><h2>评论</h2><div class="book-comment-widget"></div></section></div>
+        </article></div></div>
+        <div class="book-shadow"></div>
+      </div>
+    </div></div>
+    <div id="fullScreen">全屏显示</div>
+    <footer id="footer" role="contentinfo"></footer>
+  </div>
+  <div id="book-mobile-nav-placeholder"></div>
+  <template id="book-comment-settings"></template>
+  <script>
+  (async function () {
+    try {
+      const response = await fetch('/', {credentials: 'same-origin'});
+      if (!response.ok) throw new Error('homepage unavailable');
+      const home = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const left = home.getElementById('book-left');
+      const nav = home.querySelector('.nav-box');
+      const footer = home.getElementById('footer');
+      if (!left || !nav || !footer) throw new Error('theme shell unavailable');
+      document.getElementById('book-left').innerHTML = left.innerHTML;
+      document.getElementById('book-nav-placeholder').replaceWith(nav);
+      document.getElementById('footer').innerHTML = footer.innerHTML;
+      const mobileNav = home.getElementById('book-mobile-nav');
+      if (mobileNav) document.getElementById('book-mobile-nav-placeholder').replaceWith(mobileNav);
+      const config = home.getElementById('book-comment-settings');
+      if (config) document.getElementById('book-comment-settings').innerHTML = config.innerHTML;
+      document.title = '留言板 | ' + (home.getElementById('Book-cover-name')?.textContent.trim() || home.title);
+      for (const path of ['/media/js/main.js', '/media/js/comments.js', '/media/js/pro-adapter.js?v=mobile-nav-1']) {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = path;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.append(script);
+        });
+      }
+    } catch (error) {
+      const loading = document.getElementById('loading');
+      if (loading) loading.remove();
+      document.querySelector('#axjx_box .post-content').innerHTML = '<p>留言板暂时无法加载。<a href="/">返回首页</a></p>';
+      console.error(error);
+    }
+  })();
+  </script>
+</body>
+</html>
