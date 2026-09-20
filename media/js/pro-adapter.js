@@ -6,6 +6,7 @@
   const catalog = document.querySelector('#book-left [data-book-archive]');
   let pageScrollbar;
   let catalogScrollbar;
+  let fullCatalogList;
 
   function groupArchive(container) {
     if (!container) return;
@@ -40,6 +41,16 @@
     return left.length === right.length && left.every((value, index) => value === right[index]);
   }
 
+  function syncFullCatalogViews() {
+    if (!fullCatalogList) return;
+    document.querySelectorAll('#book-right [data-book-full-catalog] [data-book-archive]').forEach((view) => {
+      if (sameLinks(view, fullCatalogList)) return;
+      view.replaceChildren(fullCatalogList.cloneNode(true));
+      groupArchive(view);
+      pageScrollbar?.update();
+    });
+  }
+
   async function completeCatalogFromSearch(cacheKey) {
     try {
       const response = await fetch('/api/search.json', { credentials: 'same-origin' });
@@ -61,6 +72,9 @@
         item.append(link, date);
         list.append(item);
       }
+      if (!list.children.length) return;
+      fullCatalogList = list.cloneNode(true);
+      syncFullCatalogViews();
       if (sameLinks(catalog, list)) return;
       catalog.replaceChildren(list);
       groupArchive(catalog);
@@ -120,6 +134,7 @@
   function initPage() {
     groupVisibleArchives();
     initScrollbar();
+    syncFullCatalogViews();
     initImages();
     window.BookComments?.init(() => pageScrollbar?.update());
   }
