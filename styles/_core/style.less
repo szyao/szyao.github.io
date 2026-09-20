@@ -194,9 +194,11 @@ textarea {
 
 	color: #000;
 
-	position: fixed;
+	position: absolute;
 
-	bottom: 20px;
+	top: 50%;
+	right: 35px;
+	transform: translateY(-50%);
 
 	width: 480px;
 
@@ -252,9 +254,9 @@ textarea {
 
 .site-name .description {
 
-	margin-bottom: 1.5em;
+	margin-bottom: 0;
 
-	margin-top: 1.5em;
+	margin-top: .75em;
 
 	font-size: 18px
 
@@ -1547,6 +1549,7 @@ z-index: 20;
 
 @media screen and (min-width: 1201px) and (min-height: 901px) {
 	#book-right .book-site-title { display: none; }
+	.book-catalog-title { text-align: center; }
 }
 
 @media screen and (max-width: 1200px), screen and (max-height: 900px) {
