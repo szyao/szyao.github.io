@@ -268,9 +268,8 @@ textarea {
 
 	position: absolute;
 
-	top: 50%;
 	right: 35px;
-	transform: translateY(-50%);
+	bottom: 0;
 
 	width: 480px;
 
